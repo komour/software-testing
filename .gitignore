@@ -27,3 +27,4 @@ hs_err_pid*
 .gitignore
 package-lock.json
 .DS_Store
+.idea

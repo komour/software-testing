@@ -1,24 +1,29 @@
 import React from 'react';
-import './App.css';
-import Nav from './Nav';
-import About from './About';
-import Shop from './Shop';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import axios from 'axios';
+import './App.css';
+import Nav from './Components/Nav';
+import About from './Components/About';
+import Registration from "./Components/Registration";
+import Login from "./Components/Login";
+import Fail from "./Components/Fail";
+import Success from "./Components/Success";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {apiResponse: ""};
+        // this.callApi();
     }
 
     callApi() {
-        fetch("http://localhost:1337/testAPI")
-            .then(res => res.text())
-            .then(res => this.setState({apiResponse: res}));
+        axios.get('http://localhost:1337/api/testAPI').then(
+            res => this.setState({apiResponse: res.data})
+        )
     }
 
-    componentWillMount() {
-        this.callApi();
+    componentDidMount() {
+        // this.callApi();
     }
 
     render() {
@@ -28,7 +33,10 @@ class App extends React.Component {
                     <Nav/>
                     <Route path="/" exact component={Home}/>
                     <Route path="/about" component={About}/>
-                    <Route path="/shop" component={Shop}/>
+                    <Route path="/registration" component={Registration}/>
+                    <Route path="/login" component={Login}/>
+                    <Route path="/fail" component={Fail}/>
+                    <Route path="/success" component={Success}/>
                     <p>{this.state.apiResponse}</p>
                 </div>
             </Router>
