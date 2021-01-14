@@ -10,14 +10,13 @@ router.get("/testAPI", function (req, res, next) {
 
 router.get("/getUser", function (req, res, next) {
     res.send({login: user});
+    for (let user of database.entries()) {
+        console.log(user)
+    }
 });
 
 router.get("/getUser", function (req, res, next) {
     res.send({login: user});
-});
-
-router.get("/getUserList", function (req, res, next) {
-    res.send(getUserList());
 });
 
 router.post("/reg", function (req, res, next) {
@@ -53,10 +52,6 @@ function saveUser(data) {
         user = email;
         return {login: email};
     }
-}
-
-function getUserList() {
-    return database.entries()
 }
 
 function getUser(data) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 
-function Fail() {
+function LoginFail() {
     return (
         <div>
             <h1>Failed to login</h1>
@@ -9,4 +9,4 @@ function Fail() {
     );
 }
 
-export default Fail;
+export default LoginFail;

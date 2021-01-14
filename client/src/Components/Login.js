@@ -1,20 +1,18 @@
 import React from 'react';
 import axios from 'axios';
-import {withRouter, RouteComponentProps} from 'react-router-dom';
 import '../App.css';
 
 
 class Login extends React.Component {
     email;
     password;
-    submitLogin() {}
 
     constructor(props) {
         super(props);
         this.state = {email: '', password: ''};
     }
 
-    handleSubmit = (e) => {
+    authorize = (e) => {
         e.preventDefault();
 
         const loginData = {
@@ -25,13 +23,11 @@ class Login extends React.Component {
         axios.post('http://localhost:1337/api/log', loginData).then(
             res => {
                 console.log(res.data);
-                localStorage.setItem('login', res.data.login);
                 this.props.history.push('/success');
                 window.location.reload(true);
             }
         ).catch(
-            err => {
-                console.log(err.data);
+            () => {
                 this.props.history.push('/fail');
             }
         )
@@ -40,11 +36,11 @@ class Login extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.authorize}>
                     <h1>Login page</h1>
 
                     <div style={{padding: "5px"}}>
-                        <input className="form" id="input-email" type="text" name="login"
+                        <input className="form" id="input-email" type="text"
                                placeholder="Login"
                                onChange={e => this.setState({email: e.target.value})}
                                required minLength={3}
@@ -52,7 +48,7 @@ class Login extends React.Component {
                     </div>
 
                     <div style={{padding: "5px"}}>
-                        <input className="form" id="input-password" type="password" name="pass"
+                        <input className="form" id="input-password" type="password"
                                placeholder="Password"
                                onChange={e => this.setState({password: e.target.value})}
                                required minLength={3}
