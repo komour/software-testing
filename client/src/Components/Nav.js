@@ -32,29 +32,29 @@ class Nav extends React.Component {
             <nav>
                 <img src={logo} alt="logo" style={{width: "100px", height: "100px"}}/>
                 <ul className="nav-links">
-                    <Link style={navStyle} to="/">
-                        <li>Home</li>
-                    </Link>
-                    <Link style={navStyle} to="/about">
-                        <li>About</li>
-                    </Link>
+                    <li>
+                        <Link style={navStyle} to="/">Home</Link>
+                    </li>
+                    <li>
+                        <Link style={navStyle} to="/about">About</Link>
+                    </li>
                     {
                         this.state.login ?
-                            <Link to='/success' style={navStyle}>
-                                <li>{this.state.login}</li>
-                            </Link>
+                            <li>
+                                <Link to='/success' style={navStyle}>{this.state.login}</Link>
+                            </li>
                             :
-                            <Link style={navStyle} to="/registration">
-                                <li>Registration</li>
-                            </Link>
+                            <li>
+                                <Link style={navStyle} to="/registration">Registration</Link>
+                            </li>
                     }
                     {
                         this.state.login ?
                             <div></div>
                             :
-                            <Link style={navStyle} to="/login">
-                                <li>Login</li>
-                            </Link>
+                            <li>
+                                <Link style={navStyle} to="/login">Login</Link>
+                            </li>
                     }
                 </ul>
             </nav>

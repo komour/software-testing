@@ -12,7 +12,7 @@ class Registration extends React.Component {
         this.state = {email: '', password: ''};
     }
 
-    handleSubmit = (e) => {
+    register = (e) => {
         e.preventDefault();
 
         const loginData = {
@@ -21,7 +21,8 @@ class Registration extends React.Component {
         }
 
         axios.post('http://localhost:1337/api/reg', loginData).then(
-            () => {
+            res => {
+                console.log(res.data);
                 this.props.history.push('/success');
                 window.location.reload(true);
             }
@@ -31,11 +32,12 @@ class Registration extends React.Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.register}>
                     <h1>Registration page</h1>
 
                     <div style={{padding: "5px"}}>
-                        <input className="form" id="input-email" type="text"
+                        <label style={{position: "absolute", left: 30}} htmlFor="input-login">login: </label>
+                        <input className="form" id="input-login" type="text"
                                placeholder="Login"
                                onChange={e => this.setState({email: e.target.value})}
                                required minLength={3}
@@ -43,6 +45,7 @@ class Registration extends React.Component {
                     </div>
 
                     <div style={{padding: "5px"}}>
+                        <label style={{position: "absolute", left: 30}} htmlFor="input-password">password: </label>
                         <input className="form" id="input-password" type="password"
                                placeholder="Password"
                                onChange={e => this.setState({password: e.target.value})}

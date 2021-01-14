@@ -21,7 +21,6 @@ class Success extends Component {
     }
 
     logout = () => {
-        // localStorage.setItem('login', '');
         this.props.history.push('/');
         axios.post('http://localhost:1337/api/logout').then(
             res => {
