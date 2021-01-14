@@ -12,10 +12,6 @@ router.get("/getUser", function (req, res, next) {
     res.send({login: user});
 });
 
-router.get("/getUser", function (req, res, next) {
-    res.send({login: user});
-});
-
 router.get("/getUserList", function (req, res, next) {
     res.send(getUserList());
 });

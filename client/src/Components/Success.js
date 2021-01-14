@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import '../App.css';
-import {withRouter} from 'react-router-dom';
 import axios from "axios";
 
 class Success extends Component {
@@ -17,24 +16,17 @@ class Success extends Component {
                 this.setState({
                     login: res.data.login
                 })
-            },
-            err => {
-                console.log(err);
             }
         )
     }
 
-    handleLogout = (e) => {
-        localStorage.setItem('login', '');
+    logout = () => {
+        // localStorage.setItem('login', '');
         this.props.history.push('/');
         axios.post('http://localhost:1337/api/logout').then(
             res => {
                 console.log(res.data);
                 window.location.reload(true);
-            }
-        ).catch(
-            err => {
-                console.log(err.data);
             }
         )
     }
@@ -43,7 +35,7 @@ class Success extends Component {
         return (
             <div>
                 {this.state.login ? <h1>You are logged in as {this.state.login}</h1> : <h1>You are logged in</h1>}
-                <button className="logout-button" onClick={this.handleLogout}>Logout</button>
+                <button className="logout-button" onClick={this.logout}>Logout</button>
             </div>
         );
     }

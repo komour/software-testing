@@ -6,7 +6,7 @@ import Nav from './Components/Nav';
 import About from './Components/About';
 import Registration from "./Components/Registration";
 import Login from "./Components/Login";
-import Fail from "./Components/Fail";
+import LoginFail from "./Components/LoginFail";
 import Success from "./Components/Success";
 
 class App extends React.Component {
@@ -35,7 +35,7 @@ class App extends React.Component {
                     <Route path="/about" component={About}/>
                     <Route path="/registration" component={Registration}/>
                     <Route path="/login" component={Login}/>
-                    <Route path="/fail" component={Fail}/>
+                    <Route path="/fail" component={LoginFail}/>
                     <Route path="/success" component={Success}/>
                     <p>{this.state.apiResponse}</p>
                 </div>

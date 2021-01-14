@@ -22,9 +22,6 @@ class Nav extends React.Component {
                 this.setState({
                     login: res.data.login
                 })
-            },
-            err => {
-                console.log(err);
             }
         )
     }
