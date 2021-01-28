@@ -16,8 +16,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "test-playwright": "jest -- /test/playwright.test",
+    "cypress-open": "cypress open",
+    "cypress-run": "cypress run",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -43,6 +44,7 @@
     "@babel/preset-env": "^7.12.11",
     "@testing-library/react": "^9.5.0",
     "cypress": "^6.3.0",
+    "cypress-react-unit-test": "^4.17.2",
     "playwright": "^1.8.0"
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",

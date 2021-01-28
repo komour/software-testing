@@ -27,7 +27,7 @@ describe('Playwright tests', function () {
         await page.fill('#input-login', login);
         await page.fill('#input-password', password);
         await page.click('#submit-button');
-        await delay(10);
+        await delay(100);
         expect(await page.innerText('#success')).toBe('You are logged in as ' + login);
     });
 
@@ -38,7 +38,7 @@ describe('Playwright tests', function () {
         await page.fill('#input-login', login);
         await page.fill('#input-password', password);
         await page.click('#submit-button');
-        await delay(10);
+        await delay(100);
         expect(await page.innerText('#fail')).toBe('Failed to login');
     });
 
@@ -50,12 +50,12 @@ describe('Playwright tests', function () {
         await page.fill('#input-login', login);
         await page.fill('#input-password', password);
         await page.click('#submit-button');
-        await delay(10);
+        await delay(100);
         expect(await page.innerText('#success')).toBe('You are logged in as ' + login);
 
         //log out
         await page.click('#logout-button');
-        await delay(10);
+        await delay(100);
         expect(await page.innerText('#home')).toBe('Home Page');
 
         //try to log in
@@ -63,7 +63,7 @@ describe('Playwright tests', function () {
         await page.fill('#input-login', login);
         await page.fill('#input-password', password);
         await page.click('#submit-button');
-        await delay(10);
+        await delay(100);
         expect(await page.innerText('#success')).toBe('You are logged in as ' + login);
     });
 
