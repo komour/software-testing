@@ -21,3 +21,11 @@ jobs:
       - name: npm test
         working-directory: ./client
         run: npm test
+
+      - name: playwright tests
+        working-directory: ./client
+        run: npm run test-playwright
+
+      - name: cypress tests
+        working-directory: ./client
+        run: npm run cypress-run
