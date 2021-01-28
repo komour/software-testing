@@ -33,8 +33,8 @@ class Success extends Component {
     render() {
         return (
             <div>
-                {this.state.login ? <h1>You are logged in as {this.state.login}</h1> : <h1>You are logged in</h1>}
-                <button className="logout-button" onClick={this.logout}>Logout</button>
+                {this.state.login ? <h1 id='success'>You are logged in as {this.state.login}</h1> : <h1 id='success'>You are logged in</h1>}
+                <button id='logout-button' className="logout-button" onClick={this.logout}>Logout</button>
             </div>
         );
     }

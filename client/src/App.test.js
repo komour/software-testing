@@ -1,5 +1,5 @@
 import React from 'react';
-import {render, screen, fireEvent} from '@testing-library/react';
+import {render, screen} from '@testing-library/react';
 import App from './App';
 import About from "./Components/About";
 import Registration from "./Components/Registration";
@@ -18,22 +18,22 @@ describe('App rendered', function () {
     });
 
     it("nav login rendered", function () {
-        const navElement = screen.getByText("Login")
+        const navElement = screen.getByText("Login");
         expect(navElement).toBeInTheDocument();
     });
 
     it("nav registration rendered", function () {
-        const navElement = screen.getByText("Registration")
+        const navElement = screen.getByText("Registration");
         expect(navElement).toBeInTheDocument();
     });
 
     it("nav home rendered", function () {
-        const navElement = screen.getByText("Home")
+        const navElement = screen.getByText("Home");
         expect(navElement).toBeInTheDocument();
     });
 
     it("nav about rendered", function () {
-        const navElement = screen.getByText("About")
+        const navElement = screen.getByText("About");
         expect(navElement).toBeInTheDocument();
     });
 });

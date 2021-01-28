@@ -45,7 +45,7 @@ class App extends React.Component {
 }
 
 const Home = () => (
-    <div>
+    <div id='home'>
         <h1>Home Page</h1>
     </div>
 )

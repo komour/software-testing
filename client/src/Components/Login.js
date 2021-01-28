@@ -58,7 +58,7 @@ class Login extends React.Component {
                     </div>
 
                     <div style={{padding: "5px"}}>
-                        <button style={{minHeight: "30px", minWidth: "10%"}}>
+                        <button id="submit-button" style={{minHeight: "30px", minWidth: "10%"}}>
                             Login
                         </button>
                     </div>

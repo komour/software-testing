@@ -4,7 +4,7 @@ import '../App.css';
 function LoginFail() {
     return (
         <div>
-            <h1>Failed to login</h1>
+            <h1 id='fail'>Failed to login</h1>
         </div>
     );
 }

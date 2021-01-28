@@ -2,6 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/user-event": "^7.2.1",
@@ -16,6 +17,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test-playwright": "jest -- /test/playwright.test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -34,6 +36,18 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/react": "^9.5.0"
-  }
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/plugin-transform-react-jsx": "^7.12.12",
+    "@babel/preset-env": "^7.12.11",
+    "@testing-library/react": "^9.5.0",
+    "cypress": "^6.3.0",
+    "playwright": "^1.8.0"
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "keywords": [],
+  "author": "komour",
+  "license": "MIT"
 }
