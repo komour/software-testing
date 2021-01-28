@@ -14,9 +14,17 @@ jobs:
         with:
           node-version: 12
 
-      - name: npm install
+      - name: npm install on client
         working-directory: ./client
         run: npm install
+
+      - name: npm install on api
+        working-directory: ./api
+        run: npm install
+
+      - name: start api
+        working-directory: ./api
+        run: npm start
 
       - name: npm test
         working-directory: ./client
@@ -41,9 +49,17 @@ jobs:
         with:
           node-version: 12
 
-      - name: npm install
+      - name: npm install on client
         working-directory: ./client
         run: npm install
+
+      - name: npm install on api
+        working-directory: ./api
+        run: npm install
+
+      - name: start api
+        working-directory: ./api
+        run: npm start
 
       - name: playwright tests
         working-directory: ./client
