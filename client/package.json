@@ -16,6 +16,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "test": "react-scripts test a",
     "test-playwright": "jest -- /test/playwright.test",
     "cypress-open": "cypress open",
     "cypress-run": "cypress run",
